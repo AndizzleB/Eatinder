@@ -25,8 +25,8 @@ class Config(object):
     # database connection
     SQLALCHEMY_ECHO = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    if 'DATABASE_URI' in os.environ:
-        SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URI']
+    if 'DATABASE_URL' in os.environ:
+        SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
     else:
         SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/eatinder.db'
 
