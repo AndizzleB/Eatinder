@@ -93,6 +93,7 @@ class Meal(db.Model):
     created = db.Column(db.DateTime(), default=datetime.datetime.now())
     location_lat = db.Column(db.Float)
     location_lng = db.Column(db.Float)
+    recipe_url = db.Column(db.String(2048))
 
     labels = db.relationship('Label', secondary=label_meal,
         backref=db.backref('meals', lazy='dynamic'))
@@ -113,6 +114,7 @@ class Meal(db.Model):
             'created': self.created.strftime("%Y-%d-%m"),
             'photo': self.photo,
             'thumbnail': self.thumb(),
+            'recipe': self.recipe_url,
             'user': self.user.dict(),
             'labels': [ l.dict() for l in self.labels ],
         }

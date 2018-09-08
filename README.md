@@ -5,7 +5,7 @@
 
 _An [#openfooddata](https://twitter.com/hashtag/openfooddata) project started at [Open Food Data Hackdays Zug 2018](https://hack.opendata.ch/event/21)_
 
-![Vue Logo](/docs/vue-logo.png "Vue Logo") ![Flask Logo](/docs/flask-logo.png "Flask Logo") <img alt="Open Food" src"https://food.opendata.ch/files/2014/01/favicon.png" height="100">
+![Vue Logo](/docs/vue-logo.png "Vue Logo") ![Flask Logo](/docs/flask-logo.png "Flask Logo") ![Open Food Data](/docs/openfooddata.png)
 
 ## Installation
 
