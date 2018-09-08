@@ -1,77 +1,13 @@
-# Flask-VueJs-Template 🌶️✌
+# Eat•In•Der 🌶️✌
 
 [![Build Status](https://travis-ci.org/gtalarico/flask-vuejs-template.svg?branch=master)](https://travis-ci.org/gtalarico/flask-vuejs-template)
 [![codecov](https://codecov.io/gh/gtalarico/flask-vuejs-template/branch/master/graph/badge.svg)](https://codecov.io/gh/gtalarico/flask-vuejs-template)
 
-_Flask + Vue.js Web Application Template_
+_A [#openfooddata](https://twitter.com/hashtag/openfooddata) project started at [Open Food Data Hackdays Zug 2018](https://hack.opendata.ch/event/21)_
+
+Based on [flask-vuejs-template](https://github.com/gtalarico/flask-vuejs-template).
 
 ![Vue Logo](/docs/vue-logo.png "Vue Logo") ![Flask Logo](/docs/flask-logo.png "Flask Logo")
-
-## Features
-* Minimal Flask 1.0 App
-* [Flask-RestPlus](http://flask-restplus.readthedocs.io) API with class-based secure resource routing
-* Starter [PyTest](http://pytest.org) test suite
-* [vue-cli 3](https://github.com/vuejs/vue-cli/blob/dev/docs/README.md) + yarn
-* [Vuex](https://vuex.vuejs.org/)
-* [Vue Router](https://router.vuejs.org/)
-* [Axios](https://vuex.vuejs.org/) for backend communication
-* Sample Vue [Filters](https://vuejs.org/v2/guide/filters.html)
-* Heroku Configuration with one-click deployment + Gunicorn
-
-## Demo
-[Live Demo](https://flask-vuejs-template.herokuapp.com/#/api)
-
-## Alternatives
-
-If this setup is not what you are looking for, you might want look at other similar projects:
-
-* [oleg-agapov/flask-vue-spa](https://github.com/oleg-agapov/flask-vue-spa)
-* [testdrivenio/flask-vue-crud](https://github.com/testdrivenio/flask-vue-crud)
-
-#### Old Template
-
-This template was updated on 2018-08-28 to use a flatter folder structure, as well as to use yarn instead of npm.
-You can now run `yarn serve` as well as other yarn commands from the template root directory.
-The old template will continue to live in the [npm-template branch](https://github.com/gtalarico/flask-vuejs-template/tree/npm-template)
-
-#### Django
-
-Prefer Django? Checkout my [gtalarico/django-vue-template](https://github.com/gtalarico/django-vue-template)
-
-## Template Structure
-
-The template uses Flask & Flask-RestPlus to create a minimal REST style API,
-and let's VueJs + vue-cli handle the front end and asset pipline.
-Data from the python server to the Vue application is passed by making Ajax requests.
-
-### Application Structure
-
-#### Rest Api
-
-The Api is served using a Flask blueprint at `/api/` using Flask RestPlus class-based
-resource routing.
-
-#### Client Application
-
-A Flask view is used to serve the `index.html` as an entry point into the Vue app at the endpoint `/`.
-
-The template uses vue-cli 3 and assumes Vue Cli & Webpack will manage front-end resources and assets, so it does overwrite template delimiter.
-
-The Vue instance is preconfigured with Filters, Vue-Router, Vuex; each of these can easilly removed if they are not desired.
-
-#### Important Files
-
-| Location             |  Content                                   |
-|----------------------|--------------------------------------------|
-| `/app`               | Flask Application                          |
-| `/app/api`           | Flask Rest Api (`/api`)                    |
-| `/app/client.py`     | Flask Client (`/`)                         |
-| `/src`               | Vue App .                                  |
-| `/src/main.js`       | JS Application Entry Point                 |
-| `/public/index.html` | Html Application Entry Point (`/`)         |
-| `/public/static`     | Static Assets                              |
-| `/dist/`             | Bundled Assets Output (generated at `yarn build` |
-
 
 ## Installation
 
@@ -90,7 +26,7 @@ Before getting started, you should have the following installed and running:
 * Clone this repository:
 
 	```
-	$ git clone https://github.com/gtalarico/flask-vuejs-template.git
+	$ git clone https://github.com/AndizzleB/Eatinder.git
 	```
 
 * Setup virtual environment, install dependencies, and activate it:
@@ -159,21 +95,6 @@ The python buildpack will detect the `Pipfile` and install all the python depend
 
 The `Procfile` will run Django migrations and then launch Django's app using gunicorn, as recommended by heroku.
 
-#### Production Sever Setup
-
-Here are the commands we need to run to get things setup on the Heroku side:
-
-	```
-	$ heroku apps:create flask-vuejs-template-demo
-	$ heroku git:remote --app flask-vuejs-template-demo
-	$ heroku buildpacks:add --index 1 heroku/nodejs
-	$ heroku buildpacks:add --index 2 heroku/python
-	$ heroku config:set FLASK_ENV=production
-	$ heroku config:set FLASK_SECRET=SuperSecretKey
-
-	$ git push heroku
-	```
-
 ### Heroku deployment - One Click Deploy
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/gtalarico/flask-vuejs-template)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/AndizzleB/Eatinder)
