@@ -1,11 +1,12 @@
 """ App Models """
 
-import os
+import os, hashlib
 
 from flask_admin.contrib.sqla import ModelView
 from flask_admin.model import BaseModelView
 from flask_admin.form import ImageUploadField
 from werkzeug import secure_filename
+from urllib.parse import urlencode
 
 from . import db
 from .config import Config
@@ -14,8 +15,6 @@ import enum, datetime
 from sqlalchemy.types import Enum
 
 import geojson
-from geoalchemy2.types import Geometry
-from geoalchemy2.shape import to_shape
 
 LABEL_NAMES = (
     "Food Preferences",
@@ -34,8 +33,8 @@ class Label(db.Model):
         return {
             'id': self.id,
             'name': self.name,
-            'of_type': LABEL_NAME_EN[self.of_type],
-            'labels': [ l.dict() for l in self.labels ],
+            'icon': self.icon,
+            'of_type': self.of_type
         }
 
 class User(db.Model):
@@ -68,14 +67,14 @@ class User(db.Model):
             'username': self.username,
             'gravatar': self.gravatar(),
         }
-    def get_geojson(self):
-        features = [{'type': 'Feature',
-            'geometry': to_shape(m.location),
-            'properties': {'date': m.created}
-        } for m in self.meals ]
-        return geojson.dumps(
-            {'type': 'FeatureCollection', 'features': features}
-        )
+    # def get_geojson(self):
+        # features = [{'type': 'Feature',
+        #     'geometry': to_shape(m.location),
+        #     'properties': {'date': m.created}
+        # } for m in self.meals ]
+        # return geojson.dumps(
+        #     {'type': 'FeatureCollection', 'features': features}
+        # )
 
 class UserView(ModelView):
     column_list = ('id', 'username')
@@ -92,7 +91,8 @@ class Meal(db.Model):
 
     photo = db.Column(db.String(256))
     created = db.Column(db.DateTime(), default=datetime.datetime.now())
-    location = db.Column(Geometry("POINT", srid=4326))
+    location_lat = db.Column(db.Float)
+    location_lng = db.Column(db.Float)
 
     labels = db.relationship('Label', secondary=label_meal,
         backref=db.backref('meals', lazy='dynamic'))
@@ -105,12 +105,12 @@ class Meal(db.Model):
         return str(self.created)
     def thumb(self):
         if not self.photo: return None
-        name, _ = ospath.splitext(self.photo)
+        name, _ = os.path.splitext(self.photo)
         return '/photos/' + secure_filename('%s_thumb.jpg' % name)
     def dict(self):
         return {
             'id': self.id,
-            'created': self.created,
+            'created': self.created.strftime("%Y-%d-%m"),
             'photo': self.photo,
             'thumbnail': self.thumb(),
             'user': self.user.dict(),

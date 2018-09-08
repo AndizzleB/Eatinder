@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 2f0a1d613e66
+Revision ID: 124bc1ef7f90
 Revises: 
-Create Date: 2018-09-08 20:56:12.467125
+Create Date: 2018-09-08 21:16:47.205949
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '2f0a1d613e66'
+revision = '124bc1ef7f90'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -36,7 +36,8 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('photo', sa.String(length=256), nullable=True),
     sa.Column('created', sa.DateTime(), nullable=True),
-    sa.Column('location', geoalchemy2.types.Geometry(geometry_type='POINT', srid=4326), nullable=True),
+    sa.Column('location_lat', sa.Float(), nullable=True),
+    sa.Column('location_lng', sa.Float(), nullable=True),
     sa.Column('user_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['user_id'], ['user.id'], ),
     sa.PrimaryKeyConstraint('id')

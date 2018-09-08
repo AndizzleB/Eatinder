@@ -4,8 +4,6 @@ from flask import (
     send_from_directory
 )
 
-from .api import api_bp
-from .client import client_bp
 
 from flask_api import FlaskAPI
 from flask_sqlalchemy import SQLAlchemy
@@ -14,16 +12,18 @@ from flask_login import LoginManager
 from flask_admin.contrib.sqla import ModelView
 import flask_admin as admin
 
-app = Flask(__name__, static_folder='../dist/static')
-app.register_blueprint(api_bp)
-# app.register_blueprint(client_bp)
-
+app = FlaskAPI(__name__, static_folder='../dist/static')
 from .config import Config
 app.logger.info('>>> {}'.format(Config.FLASK_ENV))
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login_manager = LoginManager(app)
+
+from .api import api_bp
+# from .client import client_bp
+app.register_blueprint(api_bp)
+# app.register_blueprint(client_bp)
 
 from .models import *
 
