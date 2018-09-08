@@ -70,3 +70,46 @@ class MealView(ModelView):
             thumbnail_size=(256, 256, True))
     }
     can_export = True
+
+user_meal = db.Table(
+    'user_meal',
+    db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
+    db.Column('meal_id', db.Integer(), db.ForeignKey('meal.id'))
+)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True)
+    password = db.Column(db.String(64))
+    email = db.Column(db.String(128))
+
+    user_meals = db.relationship(Meal, secondary=user_meal,
+        backref=db.backref('users', lazy='dynamic'))
+
+    # Flask-Login integration
+    def is_authenticated(self): return True
+    def is_active(self):        return True
+    def is_anonymous(self):     return False
+    def get_id(self):           return self.id
+
+    def __unicode__(self):
+        return self.username
+    def __repr__(self):
+        return self.username
+    def gravatar(self):
+        gr_size = 80
+        if self.email == "": return "/img/usericon.png"
+        email = self.email.lower().encode('utf-8')
+        gravatar_url = "https://www.gravatar.com/avatar/"
+        gravatar_url += hashlib.md5(email).hexdigest() + "?"
+        gravatar_url += urlencode({'s':str(gr_size)})
+        return gravatar_url
+    def dict(self):
+        return {
+            'id': self.id,
+            'username': self.username,
+            'gravatar': self.gravatar(),
+        }
+
+class UserView(ModelView):
+    column_list = ('id', 'username')

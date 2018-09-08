@@ -13,6 +13,8 @@ flask-api = "*"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
 pillow = "*"
+flask-login = "*"
+"geoalchemy2" = "*"
 
 [dev-packages]
 pytest = "*"

@@ -30,7 +30,7 @@ class Config(object):
     else:
         SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/eatinder.db'
 
-    PHOTO_PATH = os.path.join(os.path.dirname(__file__), '..', 'photos')
+    PHOTO_PATH = os.path.join(os.path.dirname(__file__), '..', 'uploads', 'photos')
 
     if not os.path.exists(DIST_DIR):
         raise Exception(

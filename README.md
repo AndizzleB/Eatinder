@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/gtalarico/flask-vuejs-template.svg?branch=master)](https://travis-ci.org/gtalarico/flask-vuejs-template)
 [![codecov](https://codecov.io/gh/gtalarico/flask-vuejs-template/branch/master/graph/badge.svg)](https://codecov.io/gh/gtalarico/flask-vuejs-template)
 
-_A [#openfooddata](https://twitter.com/hashtag/openfooddata) project started at [Open Food Data Hackdays Zug 2018](https://hack.opendata.ch/event/21)_
+_An [#openfooddata](https://twitter.com/hashtag/openfooddata) project started at [Open Food Data Hackdays Zug 2018](https://hack.opendata.ch/event/21)_
 
 Based on [flask-vuejs-template](https://github.com/gtalarico/flask-vuejs-template).
 
