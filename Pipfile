@@ -15,6 +15,7 @@ flask-migrate = "*"
 pillow = "*"
 flask-login = "*"
 "geoalchemy2" = "*"
+geojson = "*"
 
 [dev-packages]
 pytest = "*"
