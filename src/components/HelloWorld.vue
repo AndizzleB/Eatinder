@@ -1,25 +1,26 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p>
-      For guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://github.com/vuejs/vue-cli/tree/dev/docs" target="_blank">vue-cli documentation</a>.
+    <p class="lead">
+      A project started at <a href="https://hack.opendata.ch/event/21">Open Food Data Hackdays Zug 2018</a>.
     </p>
-    <h3>Installed CLI Plugins</h3>
+    <p><i>
+    Contact us on <a href="https://team.opendata.ch/food/channels/foodclimateimpact">team.opendata.ch</a>
+    or via <a href="https://github.com/AndizzleB/Eatinder/issues">GitHub Issues</a>.
+    </i></p>
+    <h3>Ecosystem</h3>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank">babel</a></li>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank">eslint</a></li>
     </ul>
-    <h3>Essential Links</h3>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
       <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
       <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
     </ul>
-    <h3>Ecosystem</h3>
     <ul>
+      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/docs" target="_blank">vue-cli</a></li>
       <li><a href="https://router.vuejs.org/en/essentials/getting-started.html" target="_blank">vue-router</a></li>
       <li><a href="https://vuex.vuejs.org/en/intro.html" target="_blank">vuex</a></li>
       <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank">vue-devtools</a></li>
