@@ -5,11 +5,11 @@
 
 _An [#openfooddata](https://twitter.com/hashtag/openfooddata) project started at [Open Food Data Hackdays Zug 2018](https://hack.opendata.ch/event/21)_
 
-Based on [flask-vuejs-template](https://github.com/gtalarico/flask-vuejs-template).
-
-![Vue Logo](/docs/vue-logo.png "Vue Logo") ![Flask Logo](/docs/flask-logo.png "Flask Logo")
+![Vue Logo](/docs/vue-logo.png "Vue Logo") ![Flask Logo](/docs/flask-logo.png "Flask Logo") <img alt="Open Food" src"https://food.opendata.ch/files/2014/01/favicon.png" height="100">
 
 ## Installation
+
+Based on [flask-vuejs-template](https://github.com/gtalarico/flask-vuejs-template). See the upstream project for updates and further details.
 
 ##### Before you start
 

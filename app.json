@@ -3,7 +3,7 @@
   "name": "EatInDer Application",
   "description": "An #openfooddata project",
   "repository": "https://github.com/AndizzleB/Eatinder",
-  "logo": "https://food.opendata.ch/wp-content/themes/food.opendata.ch/images/logo.png",
+  "logo": "https://food.opendata.ch/files/2014/01/favicon.png",
   "keywords": ["openfooddata"],
   "env": {
     "FLASK_CONFIG": {
