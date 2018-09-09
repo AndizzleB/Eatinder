@@ -9,22 +9,10 @@
       v-on:selectUser="selectUser"
       />
 
-    <div class="swing"
-         v-if="user.username">
-         <vue-swing
-          @throwout="onThrowout"
-          :config="config"
-          ref="vueswing"
-        >
-          <div
-            v-for="card in cards"
-            :key="card"
-            class="swing-card"
-          >
-            <span>{{ card }}</span>
-          </div>
-        </vue-swing>
-    </div>
+    <MealSwing
+      v-if="user.username"
+      v-bind:cards="meals"
+      />
 
     <div class="user"
          v-if="user.username">
@@ -56,28 +44,19 @@
 import $backend from '../backend'
 
 import UserList from '@/components/UserList.vue'
-
-import VueSwing from 'vue-swing'
+import MealSwing from '@/components/MealSwing.vue'
 
 export default {
   name: 'about',
   components: {
-    UserList
+    UserList, MealSwing
   },
   data () {
     return {
       resources: [],
+      meals: [],
       user: {},
-      error: '',
-      config: {
-        allowedDirections: [
-          VueSwing.Direction.LEFT,
-          VueSwing.Direction.RIGHT
-        ],
-        minThrowOutDistance: 250,
-        maxThrowOutDistance: 300
-      },
-      cards: ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+      error: ''
     }
   },
   methods: {
@@ -85,6 +64,13 @@ export default {
       $backend.fetchResource()
         .then(responseData => {
           this.resources = responseData
+        }).catch(error => {
+          this.error = error.message
+        })
+      console.log('Fetching meals')
+      $backend.fetchMeals()
+        .then(responseData => {
+          this.meals = responseData
         }).catch(error => {
           this.error = error.message
         })
@@ -99,20 +85,4 @@ export default {
 
 <style lang="scss">
 .debug { opacity: 0.5; padding: 1em; margin-top: 2em; background: #eee; }
-
-.swing { height: 400px; }
-.swing-card {
-  align-items: center;
-  background-color: #fff;
-  border-radius: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  font-size: 72px;
-  height: 200px;
-  justify-content: center;
-  left: calc(50% - 100px);
-  position: absolute;
-  top: calc(50% - 100px);
-  width: 200px;
-}
 </style>

@@ -109,7 +109,7 @@ class Meal(db.Model):
     def thumb(self):
         if not self.photo: return None
         name, _ = os.path.splitext(self.photo)
-        return '/photos/' + secure_filename('%s_thumb.jpg' % name)
+        return '/static/photos/' + secure_filename('%s_thumb.jpg' % name)
     def dict(self):
         return {
             'id': self.id,

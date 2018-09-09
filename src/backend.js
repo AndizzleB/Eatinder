@@ -26,6 +26,10 @@ export default {
   fetchResource () {
     return $axios.get(`users`)
       .then(response => response.data)
+  },
+  fetchMeals () {
+    return $axios.get(`meals`)
+      .then(response => response.data)
   }
 
 }

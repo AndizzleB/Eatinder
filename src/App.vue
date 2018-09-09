@@ -5,7 +5,7 @@
       <router-link to="/login">Demo</router-link>
     </div>
     <div id="logos">
-      <h1>🌶 Eat•In•Der ️🧀</h1>
+      <h1>Eat•In•Der</h1>
     </div>
 
     <router-view/>
