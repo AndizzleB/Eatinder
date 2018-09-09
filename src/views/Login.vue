@@ -1,7 +1,8 @@
 <template>
   <div class="about">
 
-    <b-button size="lg" v-if="resources.length == 0" @click="fetchResource" color="info" large>Log in</b-button>
+    <b-button class="login-button" size="lg"
+      v-if="resources.length == 0" @click="fetchResource" color="info" large>Log in</b-button>
 
     <UserList
       v-if="resources.length > 0 && !user.username"
@@ -84,5 +85,6 @@ export default {
 </script>
 
 <style lang="scss">
+.login-button { margin: 3em; }
 .debug { opacity: 0.5; padding: 1em; margin-top: 2em; background: #eee; }
 </style>

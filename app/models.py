@@ -37,6 +37,10 @@ class Label(db.Model):
             'of_type': self.of_type
         }
 
+class LabelView(ModelView):
+    column_list = ('name', 'icon', 'of_type')
+    can_export = True
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True)
@@ -107,9 +111,10 @@ class Meal(db.Model):
     def __repr__(self):
         return str(self.created)
     def thumb(self):
-        if not self.photo: return None
-        name, _ = os.path.splitext(self.photo)
-        return '/static/photos/' + secure_filename('%s_thumb.jpg' % name)
+        return self.photo
+        # if not self.photo: return None
+        # name, _ = os.path.splitext(self.photo)
+        # return '/static/photos/' + secure_filename('%s_thumb.jpg' % name)
     def dict(self):
         return {
             'id': self.id,
@@ -123,10 +128,10 @@ class Meal(db.Model):
 
 class MealView(ModelView):
     column_list = ('created', 'labels', 'user')
-    form_extra_fields = {
-        'photo': ImageUploadField('Photo',
-            base_path=Config.PHOTO_PATH,
-            url_relative_path='photos/',
-            thumbnail_size=(256, 256, True))
-    }
+    # form_extra_fields = {
+    #     'photo': ImageUploadField('Photo',
+    #         base_path=Config.PHOTO_PATH,
+    #         url_relative_path='photos/',
+    #         thumbnail_size=(256, 256, True))
+    # }
     can_export = True

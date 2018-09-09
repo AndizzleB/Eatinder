@@ -14,7 +14,8 @@
           <img
             :src="card.thumbnail">
           <p v-for="label in card.labels"
-            :key="label.id">
+            :key="label.id"
+            class="card-labels">
             <span :title="label.name">{{ label.icon }}</span>
           </p>
           <small>{{ card.created }}</small>
@@ -82,5 +83,10 @@ export default {
 .swing-card p {
   font-size: 32pt;
   margin: 0;
+}
+.swing-card .card-labels {
+  display: block;
+  width: 100%; height: 1.4em;
+  overflow: hidden;
 }
 </style>
