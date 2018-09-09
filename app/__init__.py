@@ -30,7 +30,7 @@ from .models import *
 admin = admin.Admin(app, name='Eat•In•Der', template_mode='bootstrap3')
 
 admin.add_view(UserView(User, db.session, name="Users"))
-admin.add_view(ModelView(Label, db.session, name="Labels"))
+admin.add_view(LabelView(Label, db.session, name="Labels"))
 admin.add_view(MealView(Meal, db.session, name="Meals"))
 
 @app.route('/')
