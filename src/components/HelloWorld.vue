@@ -1,8 +1,9 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h2>{{ msg }}</h2>
     <p class="lead">
-      A project started at <a href="https://hack.opendata.ch/event/21">Open Food Data Hackdays Zug 2018</a>.
+      A project started at <a href="https://hack.opendata.ch/event/21">Open Food Data</a> Hackdays in Zug by<br>
+      <a href="https://github.com/Vera1692">Vanathy</a>, <a href="https://github.com/AndizzleB">Andrew</a>, <a href="https://github.com/ptrckwdmr">Patrick</a>, <a href="https://www.ethz.ch/content/specialinterest/mtec/chair-of-entrepreneurial-risks/en/about-us/people/person-detail.html?persid=146090">Hyun-U</a>, <a href="https://github.com/loleg">Oleg</a>
     </p>
     <p><i>
     Contact us on <a href="https://team.opendata.ch/food/channels/foodclimateimpact">team.opendata.ch</a>
@@ -10,14 +11,11 @@
     </i></p>
     <h3>Ecosystem</h3>
     <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank">eslint</a></li>
-    </ul>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
+      <li><a href="https://www.sqlalchemy.org/" target="_blank">SQL Alchemy</a></li>
+      <li><a href="https://flask-restful.readthedocs.io/en/latest/" target="_blank">Flask RESTful</a></li>
+      <li><a href="https://flask-admin.readthedocs.io/en/latest/" target="_blank">Flask-Admin</a></li>
+      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank">Babel</a></li>
+      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank">Eslint</a></li>
     </ul>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/docs" target="_blank">vue-cli</a></li>
