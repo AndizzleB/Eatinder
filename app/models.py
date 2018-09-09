@@ -54,13 +54,15 @@ class User(db.Model):
     def __repr__(self):
         return self.username
     def gravatar(self):
-        gr_size = 80
-        if self.email == "": return "/img/usericon.png"
-        email = self.email.lower().encode('utf-8')
-        gravatar_url = "https://www.gravatar.com/avatar/"
-        gravatar_url += hashlib.md5(email).hexdigest() + "?"
-        gravatar_url += urlencode({'s':str(gr_size)})
-        return gravatar_url
+        return "https://github.com/%s.png?size=200" % self.username
+        # gr_size = 80
+        # if self.email == "" or self.email is None:
+        #     return "/img/usericon.png"
+        # email = self.email.lower().encode('utf-8')
+        # gravatar_url = "https://www.gravatar.com/avatar/"
+        # gravatar_url += hashlib.md5(email).hexdigest() + "?"
+        # gravatar_url += urlencode({'s':str(gr_size)})
+        # return gravatar_url
     def dict(self):
         return {
             'id': self.id,
