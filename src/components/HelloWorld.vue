@@ -3,7 +3,7 @@
     <h2>{{ msg }}</h2>
     <p class="lead">
       A project started at <a href="https://hack.opendata.ch/event/21">Open Food Data</a> Hackdays in Zug by<br>
-      <a href="https://github.com/Vera1692">Vanathy</a>, <a href="https://github.com/AndizzleB">Andrew</a>, <a href="https://github.com/ptrckwdmr">Patrick</a>, <a href="https://www.ethz.ch/content/specialinterest/mtec/chair-of-entrepreneurial-risks/en/about-us/people/person-detail.html?persid=146090">Hyun-U</a>, <a href="https://github.com/loleg">Oleg</a>
+      <a href="https://github.com/Vera1692">Vanathy</a>, <a href="https://github.com/AndizzleB">Andrew</a>, <a href="https://github.com/loleg">Oleg</a>
     </p>
     <p><i>
     Contact us on <a href="https://team.opendata.ch/food/channels/foodclimateimpact">team.opendata.ch</a>
